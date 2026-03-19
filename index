@@ -190,7 +190,10 @@
     </div>
 
     <script>
-        const API_URL = 'https://hedhi.stephen-gitau.workers.dev';
+        // Auto-detect API URL based on deployment
+        const API_URL = window.location.hostname.includes('pages.dev') 
+            ? 'https://hedhi.stephen-gitau.workers.dev'
+            : 'https://hedhi.stephen-gitau.workers.dev';
         let authToken = localStorage.getItem('hedhi_token');
         let currentUser = JSON.parse(localStorage.getItem('hedhi_user') || 'null');
 
